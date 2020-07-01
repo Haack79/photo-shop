@@ -1,15 +1,13 @@
 import React from "react"
-import Header from "./components/Header"
-import Cart from "./pages/Cart"
-import Photos from "./pages/Photos"
+import {Link} from 'react-router-dom';
 
-function App() {    
+function Header() {
     return (
-        <div>
-            <Header />
-            <h1>Home Page</h1>
-        </div>
+        <header>
+            <Link to="/"><h2>Pic Some</h2></Link>
+            <Link to="/cart"><i className="ri-shopping-cart-line ri-fw ri-2x"></i></Link>
+        </header>
     )
 }
 
-export default App
+export default Header

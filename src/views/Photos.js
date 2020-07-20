@@ -1,11 +1,10 @@
 import React, {useContext} from "react";
 import Image from '../components/Image';
 import {getClass} from "../utils";
-import {ContextProvider} from "./Context"
-import { Context } from "../Context";
-
+import {Context} from "../Context"
+// /Users/brianhaack/Documents/Projects/React/photo-store/src/Context.js
 function Photos() {
-    const {allPhotos} = useContext(ContextProvider);
+    const {allPhotos} = useContext(Context);
     const images = allPhotos.map((img, i) => (
         <Image key={img.id} img={img} className={getClass(i)} />
     ))

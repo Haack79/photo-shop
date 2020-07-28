@@ -8,6 +8,7 @@ function Cart() {
     const cartItemImages = cartItems.map(img => (
         <ImgInCart key={img.id} img={img} />
     ))
+
     const totalCost = 5.99 * cartItems.length
     const totalCostDisplay = totalCost.toLocaleString("en-US", {style : "currency", currency: "USD"})
     const order = () => {
@@ -22,9 +23,16 @@ function Cart() {
             <h1>Check out</h1>
             {cartItemImages}
             <p className="total-cost">Total: {totalCostDisplay}</p>
-            <div className="order-button">
-                <button className="order-button" onClick={() => order()}>{buttonText}</button>
-            </div>
+            {
+                cartItems.length > 0 ? 
+                <div className="order-button">
+                    <button className="order-button" onClick={() => order()}>{buttonText}</button>
+                </div> :
+                <div>
+                    <button disabled>{buttonText}</button>
+                    <p>No Items in Cart</p>
+                </div>
+            }
         </main>
     )
 }

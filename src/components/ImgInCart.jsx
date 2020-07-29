@@ -1,4 +1,5 @@
 import React, {useContext, useState} from "react";
+import PropTypes from "prop-types";
 import {Context} from "../Context";
 
 const ImgInCart = ({img}) => {
@@ -17,4 +18,11 @@ const ImgInCart = ({img}) => {
         </div>
     )
 }
+
+ImgInCart.propTypes = {
+    item: PropTypes.shape({
+        url: PropTypes.string.isRequired
+    })
+}
+
 export default ImgInCart; 
